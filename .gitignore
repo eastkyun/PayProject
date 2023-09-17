@@ -6,6 +6,8 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 build/
+db/data/
+db/conf.d/my.cnf
 ### STS ###
 .apt_generated
 .classpath
