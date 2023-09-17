@@ -5,14 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Builder
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class RegisterMembershipCommand extends SelfValidating<RegisterMembershipCommand> {
+public class ModifyMembershipCommand extends SelfValidating<FindMembershipCommand> {
+
+
+    @NotNull
+    private final String membershipId;
 
     @NotNull
     private final String name;
@@ -25,12 +28,12 @@ public class RegisterMembershipCommand extends SelfValidating<RegisterMembership
     @NotBlank
     private final String email;
 
-    @AssertTrue
     private final boolean isValid;
 
     private final boolean isCorp;
 
-    public RegisterMembershipCommand(String name,  String address, String email,boolean isValid, boolean isCorp) {
+    public ModifyMembershipCommand(String membershipId, String name,  String address, String email,boolean isValid, boolean isCorp) {
+        this.membershipId =membershipId;
         this.name = name;
         this.address = address;
         this.email = email;
@@ -38,5 +41,4 @@ public class RegisterMembershipCommand extends SelfValidating<RegisterMembership
         this.isCorp = isCorp;
         this.validatedSelf();
     }
-
 }

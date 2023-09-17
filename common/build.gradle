@@ -1,0 +1,45 @@
+//plugins {
+//    id 'java'
+//    id 'org.springframework.boot' version '2.7.16-SNAPSHOT'
+//    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+//}
+//
+//group = 'com.pay.common'
+//version = '0.0.1-SNAPSHOT'
+//
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//
+//dependencies {
+//    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+//    implementation 'org.springframework.boot:spring-boot-starter:2.7.13'
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+plugins {
+    id 'java'
+}
+
+group 'com.pay.common'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+}
+
+test {
+    useJUnitPlatform()
+}

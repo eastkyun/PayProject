@@ -1,5 +1,4 @@
-package common;
-
+package com.pay.common;
 
 import javax.validation.*;
 import java.util.Set;
