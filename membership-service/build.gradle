@@ -1,5 +1,5 @@
 plugins {
-//    id 'com.palantir.docker' version '0.25.0'
+    id("com.palantir.docker") version "0.35.0"
 }
 ext{
 //    axonVersion = "4.6.0"
@@ -24,10 +24,10 @@ dependencies {
 //    implementation group: 'org.axonframework', name: 'axon-spring-boot-starter', version: "$axonVersion"
 }
 
-//docker {
-//    println(tasks.bootJar.outputs.files)
-//    name rootProject.name+'-'+project.name + ":" + version
-//    dockerfile file('./Dockerfile')
-//    files tasks.bootJar.outputs.files
-//    buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])
-//}
+docker {
+    println(tasks.bootJar.outputs.files)
+    name rootProject.name+'-'+project.name + ":" + version // image 이름
+    dockerfile file('./Dockerfile') // 어떤 Dockerfile
+    files tasks.bootJar.outputs.files // 어떤 파일들을 Dockerfile 복사할 것인가
+    buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name]) // 전달할 인자
+}
