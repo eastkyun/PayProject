@@ -1,1 +1,3 @@
 "# PayProject" 
+
+gradlew.bat docker  
